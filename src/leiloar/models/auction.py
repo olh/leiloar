@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, Field, HttpUrl
@@ -112,7 +112,7 @@ class AuctionLot(BaseModel):
     auctioneer_name: str = Field(default="Leiloeiro Oficial")
     
     # Metadata
-    scraped_at: datetime = Field(default_factory=datetime.utcnow)
+    scraped_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     raw_metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
