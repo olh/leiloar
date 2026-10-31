@@ -7,6 +7,7 @@ from leiloar.parsers.cnj_validator import (
     parse_cnj,
     validate_cnj,
 )
+from leiloar.parsers.edital_parser import JudicialEditalParser, ParsedEdital
 
 __all__ = [
     "CNJMetadata",
@@ -14,4 +15,7 @@ __all__ = [
     "extract_cnj_numbers",
     "parse_cnj",
     "validate_cnj",
+    "JudicialEditalParser",
+    "ParsedEdital",
 ]
+
