@@ -114,6 +114,34 @@ class AuctionRepository:
 
         conn.commit()
 
+    def get_lot_by_id(self, lot_id: str) -> Optional[Dict[str, Any]]:
+        """Retrieve single lot record with classification by primary ID."""
+        conn = self.db.get_connection()
+        cursor = conn.cursor()
+        select_sql = """
+            SELECT 
+                l.*,
+                c.opportunity_score,
+                c.risk_rating,
+                c.liquidity_tier,
+                c.estimated_net_margin_pct,
+                c.recommended_action,
+                c.summary,
+                c.tags_json,
+                c.risk_factors_json
+            FROM auction_lots l
+            LEFT JOIN lot_classifications c ON l.lot_id = c.lot_id
+            WHERE l.lot_id = ?
+        """
+        cursor.execute(select_sql, [lot_id])
+        row = cursor.fetchone()
+        if not row:
+            return None
+        d = dict(row)
+        d["tags"] = json.loads(d["tags_json"]) if d.get("tags_json") else []
+        d["risk_factors"] = json.loads(d["risk_factors_json"]) if d.get("risk_factors_json") else []
+        return d
+
     def search_radar(
         self,
         query: Optional[str] = None,
