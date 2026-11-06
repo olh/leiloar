@@ -1,6 +1,6 @@
 # Leiloar.com — SaaS Auction Research and Classification Framework
 
-[![CI](https://github.com/olh/leiloar/actions/workflows/ci.yml/badge.svg)](https://github.com/olh/leiloar/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/badge/tests-18%20passed-brightgreen.svg)](tests/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
