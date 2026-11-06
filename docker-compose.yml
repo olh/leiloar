@@ -1,0 +1,27 @@
+services:
+  leiloar-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: leiloar-radar:latest
+    container_name: leiloar_radar_service
+    ports:
+      - "8000:8000"
+    environment:
+      - LEILOAR_API_HOST=0.0.0.0
+      - LEILOAR_API_PORT=8000
+      - LEILOAR_DATABASE_PATH=/app/data/leiloar_radar.db
+      - LEILOAR_DEFAULT_UF=SP
+      - LEILOAR_LOG_LEVEL=INFO
+    volumes:
+      - leiloar_data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  leiloar_data:
+    driver: local

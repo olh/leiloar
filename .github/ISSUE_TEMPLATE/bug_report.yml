@@ -1,0 +1,24 @@
+name: "Bug Report"
+description: "File an issue about parser failure, scraper error, or scoring deviation."
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: "Describe the bug encountered."
+    validations:
+      required: true
+  - type: textarea
+    id: sample_input
+    attributes:
+      label: Sample Input / Edital Text (Anonymized)
+      description: "Provide the CNJ process string, URL, or edital excerpt. Do not paste sensitive personal data."
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: "What did you expect to happen instead?"
+    validations:
+      required: true

@@ -1,0 +1,40 @@
+name: "New Auctioneer Scraper Proposal"
+description: "Propose or request a crawler adapter for a Brazilian auctioneer or bank portal."
+title: "[Scraper Proposal]: "
+labels: ["enhancement", "crawler"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for proposing a new auctioneer crawler for the Leiloar Radar fleet!"
+  - type: input
+    id: auctioneer_name
+    attributes:
+      label: Auctioneer / Portal Name
+      description: "Official auctioneer name (e.g. Freitas Leiloeiro, Sodré Santoro)"
+      placeholder: "e.g. Freitas Leiloeiro"
+    validations:
+      required: true
+  - type: input
+    id: portal_url
+    attributes:
+      label: Website URL
+      placeholder: "https://www.freitasleiloeiro.com.br"
+    validations:
+      required: true
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Auction Category
+      options:
+        - "Judicial (TJ / TRT / TRF)"
+        - "Extrajudicial Bank Repossession"
+        - "Corporate Disinvestment"
+        - "Government / DETRAN"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Technical Details & Data Access
+      description: "Does the portal use server-rendered HTML, an open REST API, or client-side SPA rendering?"
+      placeholder: "Uses standard JSON API endpoint or requires headless rendering..."
