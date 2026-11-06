@@ -178,12 +178,20 @@ Access the interactive API documentation at:
 - **ReDoc:** `http://localhost:8000/redoc`
 - **Health Check:** `http://localhost:8000/health`
 
-### 7. Running Tests
+### 7. Running with Docker & Docker Compose
+
+Run the fully containerized API server with healthchecks:
+
+```bash
+docker compose up -d
+```
+
+### 8. Running Tests
 
 Execute the comprehensive test suite:
 
 ```bash
-pytest -v tests/
+python -m pytest -v
 ```
 
 ```text
@@ -213,7 +221,7 @@ tests/test_storage.py::test_repository_upsert_and_search PASSED
 
 ## 🗺️ Roadmap Ahead (180 Hours)
 
-A detailed engineering roadmap comprising **180 hours of planned work** across 6 core milestones is documented in **[ROADMAP.md](ROADMAP.md)**:
+A detailed engineering roadmap comprising **180 hours of planned work** across 6 core milestones is documented in **[ROADMAP.md](ROADMAP.md)** and tracked via **[GitHub Issues](https://github.com/olh/leiloar/issues)**:
 
 | Milestone | Scope | Hours |
 |---|---|:---:|
