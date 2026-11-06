@@ -237,8 +237,10 @@ A detailed engineering roadmap comprising **180 hours of planned work** across 6
 
 ## 🔒 Security & Privacy
 
+- **Zero Personal or Regulated Data:** The framework exclusively ingests and processes public, non-confidential asset listings from official court gazettes and bank auction catalogs. It does not collect, process, or store personal data (PII), customer records, or regulated financial/health information.
 - **No Secrets in History:** The repository contains zero API keys, passwords, or personal credentials. Configuration is strictly environment-based via `.env.example`.
 - **Synthetic Sample Data:** All test fixtures and sample editais use mock identifiers and fictional characters to protect privacy.
+- **Non-Frontier / Rule-Based Architecture:** Uses deterministic parsers, heuristics, and financial models for asset evaluation without building, training, or benchmarking frontier AI models.
 - **Code Standards:** Built in compliance with PEP 8 and modern Python type annotations.
 
 ---
