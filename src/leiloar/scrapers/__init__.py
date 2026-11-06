@@ -11,6 +11,11 @@ from leiloar.scrapers.registry import (
     register_scraper,
 )
 
+# Auto-import scraper modules to register them
+import leiloar.scrapers.caixa.scraper  # noqa: F401
+import leiloar.scrapers.portal_zuk.scraper  # noqa: F401
+import leiloar.scrapers.mega_leiloes.scraper  # noqa: F401
+
 __all__ = [
     "BaseScraper",
     "ScraperException",
